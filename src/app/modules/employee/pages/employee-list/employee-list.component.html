@@ -1,0 +1,20 @@
+<div class="title-container col-8">
+  <h2 >Listado de empleados:</h2>
+</div>
+
+<div class="employee-container card col-8" style="margin: auto;">
+  <ul class="list-group" *ngIf="employeeArray.length >= 1 else NoEmployees">
+    <li appHighLigth style="cursor: pointer;" *ngFor="let employee of employeeArray"
+
+    class="list-group-item list-group-item-action">
+    <span class="id">{{employee.id}}</span>
+    <span style="margin-left: 5px;">
+      {{employee.firstName}} {{employee.lastName}} - {{employee.country}} - ${{employee.salary}}
+    </span>
+    </li>
+  </ul>
+</div>
+
+<ng-template #NoEmployees>
+  <span class="badge badge-primary">Aún no hay empleados</span>
+</ng-template>
