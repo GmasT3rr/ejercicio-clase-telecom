@@ -1,0 +1,25 @@
+<div class="title-container col-8">
+  <h2>Empleado: {{employee?.id}}</h2>
+  <button class="redirect" routerLink="/empleados"> Ir a listado de empleados</button>
+</div>
+
+<div class="employee-container col-8 card">
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-action">
+      <span>Nombre: </span>{{employee?.firstName}}
+    </li>
+    <li class="list-group-item list-group-item-action">
+      <span>Apellido: </span>{{employee?.lastName}}
+    </li>
+    <li class="list-group-item list-group-item-action">
+      <span>Pais: </span>{{employee?.country}}
+    </li>
+    <li class="list-group-item list-group-item-action">
+      <span>Salario: </span>{{employee?.salary}}
+    </li>
+
+  </ul>
+</div>
+<div class="edit-container col-8">
+  <button class="edit" routerLink="/empleados/{{ employee?.id }}/modificar"> Editar empleado</button>
+</div>

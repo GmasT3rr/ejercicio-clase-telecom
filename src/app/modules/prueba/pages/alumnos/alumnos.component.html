@@ -1,0 +1,18 @@
+<p>alumnos works!</p>
+<h3>Alumnos</h3>
+<ng-container *ngFor="let alumno of alumnos">
+  <pre (click)="triggerOutput(alumno)">
+  Id: {{alumno.id}}
+  Nombre: {{alumno.nombre}}
+  Apellido: {{alumno.apellido}}
+  Notas: {{alumno.notas}}
+</pre>
+</ng-container>
+
+<h3>Prueba</h3>
+<pre>
+  Id: {{prueba.id}}
+  Nombre Materia: {{prueba.nombreMaterial}}
+  Profesor: {{prueba.profesor}}
+  Fecha: {{prueba.fecha | date}}
+</pre>
