@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { EmployeeService } from 'src/app/services/employee.service';
+import { Employee } from '../employee/employee.component';
 
 @Component({
   selector: 'app-employee-list',
@@ -6,33 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./employee-list.component.css'],
 })
 export class EmployeeListComponent {
-  employeeArray: any[];
+  employeeArray: any[] = [];
 
-  constructor() {
-    this.employeeArray = [
-      {
-        id: 1,
-        fistName: 'Lucas',
-        lastName: 'Ramallo',
-        country: 'Argentina',
-        salary: '2000',
-      },
-      {
-        id: 2,
-        fistName: 'Franco',
-        lastName: 'Ramirez',
-        country: 'Venezuela',
-        salary: '2500',
-      },
-      {
-        id: 3,
-        fistName: 'Pablo',
-        lastName: 'Escobar',
-        country: 'Colombia',
-        salary: '3000',
-      },
-    ];
-
-    // this.employeeArray = []
+  constructor(private employeeService: EmployeeService) {
+    this.employeeService.getEmployees().subscribe((res) => {
+      this.employeeArray = res;
+    });
   }
 }

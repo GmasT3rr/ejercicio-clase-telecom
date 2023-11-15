@@ -1,0 +1,110 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "firstName": "Lucas",
+      "lastName": "Ramallo",
+      "country": "Argentina",
+      "salary": "2000"
+    },
+    {
+      "id": 2,
+      "firstName": "Franco",
+      "lastName": "Ramirez",
+      "country": "Venezuela",
+      "salary": "2500"
+    },
+    {
+      "id": 3,
+      "firstName": "Pablo",
+      "lastName": "Escobar",
+      "country": "Colombia",
+      "salary": "3000"
+    },
+    {
+      "id": 4,
+      "firstName": "Maria",
+      "lastName": "Gomez",
+      "country": "Mexico",
+      "salary": "2800"
+    },
+    {
+      "id": 5,
+      "firstName": "Carlos",
+      "lastName": "Hernandez",
+      "country": "Spain",
+      "salary": "3200"
+    },
+    {
+      "id": 6,
+      "firstName": "Elena",
+      "lastName": "Rodriguez",
+      "country": "Mexico",
+      "salary": "2700"
+    },
+    {
+      "id": 7,
+      "firstName": "Javier",
+      "lastName": "Lopez",
+      "country": "Spain",
+      "salary": "3100"
+    }
+  ],
+  "managers": [
+    {
+      "id": 101,
+      "firstName": "John",
+      "lastName": "Doe",
+      "country": "United States",
+      "employees": [
+        { "employeeId": 1 },
+        { "employeeId": 2 },
+        { "employeeId": 3 }
+      ]
+    },
+    {
+      "id": 102,
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "country": "Canada",
+      "employees": [{ "employeeId": 4 }, { "employeeId": 5 }]
+    },
+    {
+      "id": 103,
+      "firstName": "Alicia",
+      "lastName": "Martinez",
+      "country": "Spain",
+      "employees": [{ "employeeId": 6 }, { "employeeId": 7 }]
+    }
+  ],
+  "sectors": [
+    {
+      "id": 201,
+      "name": "Development",
+      "idManager": 101,
+      "description": "Responsible for software development",
+      "location": "Building A, Floor 3",
+      "employees": [{ "employeeId": 1 }, { "employeeId": 2 }]
+    },
+    {
+      "id": 202,
+      "name": "Marketing",
+      "idManager": 102,
+      "description": "Handles marketing and promotional activities",
+      "location": "Building B, Floor 2",
+      "employees": [{ "employeeId": 3 }, { "employeeId": 5 }]
+    },
+    {
+      "id": 203,
+      "name": "Finance",
+      "idManager": 103,
+      "description": "Manages financial activities and budgeting",
+      "location": "Building A, Floor 1",
+      "employees": [
+        { "employeeId": 4 },
+        { "employeeId": 6 },
+        { "employeeId": 7 }
+      ]
+    }
+  ]
+}

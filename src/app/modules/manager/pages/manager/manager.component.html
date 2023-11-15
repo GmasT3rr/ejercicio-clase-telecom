@@ -1,0 +1,35 @@
+<div class="title-container col-8">
+  <h2>Gerente: {{manager?.id}}</h2>
+  <button class="redirect" routerLink="/gerentes"> Ir a listado de gerentes</button>
+</div>
+
+<div class="employee-container col-8 card">
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-action">
+      <span>Nombre: </span>{{manager?.firstName}}
+    </li>
+    <li class="list-group-item list-group-item-action">
+      <span>Apellido: </span>{{manager?.lastName}}
+    </li>
+    <li class="list-group-item list-group-item-action">
+      <span>Pais: </span>{{manager?.country}}
+    </li>
+    <li class="list-group-item list-group-item-action">
+      <span>Empleados: </span>
+      <ng-container *ngFor="let employee of manager?.employees">
+        Id: {{employee.employeeId}}
+      </ng-container>
+
+    </li>
+    <li class="list-group-item list-group-item-action">
+      <span>Informacion empleados: </span>
+      <br>
+      <ng-container *ngFor="let employee of employees">
+        <span>{{employee.firstName}} {{employee.lastName}} {{employee.salary}}</span>
+        <br>
+      </ng-container>
+
+    </li>
+
+  </ul>
+</div>

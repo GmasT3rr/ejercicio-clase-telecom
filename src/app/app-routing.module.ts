@@ -15,6 +15,11 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'gerentes',
+    loadChildren: () =>
+      import('./modules/manager/manager.module').then((m) => m.ManagerModule),
+  },
+  {
     path: 'prueba',
     loadChildren: () =>
       import('./modules/prueba/prueba.module').then((m) => m.PruebaModule),

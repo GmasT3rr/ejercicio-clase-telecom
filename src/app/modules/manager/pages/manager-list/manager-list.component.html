@@ -1,0 +1,43 @@
+<div class="title-container col-8">
+  <h2>Listado de gerentes:</h2>
+  <button class="redirect" routerLink="/home"> Ir a home</button>
+</div>
+
+<div class="employee-container card col-8" style="margin: auto;">
+  <ul class="list-group" *ngIf="managerArray.length >= 1 else NoManager">
+    <li appHighLigth style="cursor: pointer;" *ngFor="let manager of managerArray"
+      class="list-group-item list-group-item-action">
+      <div [routerLink]="[manager.id]">
+        <span class="id">{{manager.id}}</span>
+        <span style="margin-left: 5px;">
+          {{manager.firstName}} {{manager.lastName}} - {{manager.country}} -{{manager.employees | json}}
+        </span>
+      </div>
+
+    </li>
+  </ul>
+</div>
+
+<!-- Con pipe async -->
+<!-- <div class="employee-container card col-8" style="margin: auto;">
+  <ng-container *ngIf="managerArray$ | async as managerArray">
+    <ul class="list-group" *ngIf="managerArray.length >= 1 else NoManager">
+      <li appHighLigth style="cursor: pointer;" *ngFor="let manager of managerArray"
+        class="list-group-item list-group-item-action">
+        <div [routerLink]="[manager.id]">
+          <span class="id">{{manager.id}}</span>
+          <span style="margin-left: 5px;">
+            {{manager.firstName}} {{manager.lastName}} - {{manager.country}} -{{manager.employees | json}}
+          </span>
+        </div>
+
+      </li>
+    </ul>
+  </ng-container>
+
+</div> -->
+
+
+<ng-template #NoManager>
+  <span class="badge badge-primary">Aún no hay gerentes</span>
+</ng-template>
