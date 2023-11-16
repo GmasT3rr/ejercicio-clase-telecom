@@ -1,0 +1,58 @@
+<div style="margin-top: 50px">
+  <!--  -->
+  <label for=""
+    >Nombre Template Driven Form
+    <input type="text" [(ngModel)]="nombre" />
+  </label>
+  <br />
+  <p>{{ nombre }}</p>
+  <hr />
+  <!--  -->
+  <label for=""
+    >Apellido Reactive Form
+    <input type="text" [formControl]="apellido" />
+  </label>
+  <br />
+  <p>{{ apellido.value }}</p>
+  <button (click)="updateName()">Actualizar nombre a Lucas</button>
+
+  <hr />
+
+  <form [formGroup]="formulario">
+    <label for=""
+      >Nombre
+      <input type="text" formControlName="nombre" />
+    </label>
+    <br />
+    <small
+      *ngIf="
+        formulario.controls.nombre.invalid &&
+        (formulario.controls.nombre.dirty || formulario.controls.nombre.touched)
+      "
+      class=" "
+      >El nombre no es válido</small
+    >
+    <br />
+    <label for=""
+      >Apellido
+      <input type="text" formControlName="apellido" />
+    </label>
+    <br />
+
+    <small
+      *ngIf="
+        formulario.controls.apellido.invalid &&
+        (formulario.controls.apellido.dirty ||
+          formulario.controls.apellido.touched)
+      "
+      class=" "
+      >El apellido no es válido</small
+    >
+    <br />
+  </form>
+  <br />
+  <button (click)="verForm()">Ver formulario</button>
+  <button (click)="patchValue()">Actualizar nombre a Jotgito</button>
+
+  <!--  -->
+</div>
