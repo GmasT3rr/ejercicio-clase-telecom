@@ -10,9 +10,10 @@ export class CreateEmployeeComponent {
 
   titulo: string = 'Crear empleado:';
 
-  habilitar: boolean = false;
+  habilitar: boolean = true;
 
   funcionDelBoton() {
     console.log('Funciono');
   }
+
 }

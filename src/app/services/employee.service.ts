@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Employee } from '../modules/employee/pages/employee/employee.component';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -21,4 +22,5 @@ export class EmployeeService {
     //   params: new HttpParams().append('id', id).append('name', 'jorge'),
     // });
   }
+
 }

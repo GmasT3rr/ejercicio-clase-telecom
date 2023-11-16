@@ -10,3 +10,7 @@ button{
   border: none;
   border-radius: 5px;
 }
+.disabled{
+  opacity: .7;
+  background-color: grey;
+}

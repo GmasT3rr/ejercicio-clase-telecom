@@ -49,6 +49,7 @@
       "country": "Spain",
       "salary": "3100"
     }
+
   ],
   "managers": [
     {
@@ -57,9 +58,15 @@
       "lastName": "Doe",
       "country": "United States",
       "employees": [
-        { "employeeId": 1 },
-        { "employeeId": 2 },
-        { "employeeId": 3 }
+        {
+          "employeeId": 1
+        },
+        {
+          "employeeId": 2
+        },
+        {
+          "employeeId": 3
+        }
       ]
     },
     {
@@ -67,14 +74,28 @@
       "firstName": "Jane",
       "lastName": "Smith",
       "country": "Canada",
-      "employees": [{ "employeeId": 4 }, { "employeeId": 5 }]
+      "employees": [
+        {
+          "employeeId": 4
+        },
+        {
+          "employeeId": 5
+        }
+      ]
     },
     {
       "id": 103,
       "firstName": "Alicia",
       "lastName": "Martinez",
       "country": "Spain",
-      "employees": [{ "employeeId": 6 }, { "employeeId": 7 }]
+      "employees": [
+        {
+          "employeeId": 6
+        },
+        {
+          "employeeId": 7
+        }
+      ]
     }
   ],
   "sectors": [
@@ -84,7 +105,14 @@
       "idManager": 101,
       "description": "Responsible for software development",
       "location": "Building A, Floor 3",
-      "employees": [{ "employeeId": 1 }, { "employeeId": 2 }]
+      "employees": [
+        {
+          "employeeId": 1
+        },
+        {
+          "employeeId": 2
+        }
+      ]
     },
     {
       "id": 202,
@@ -92,7 +120,14 @@
       "idManager": 102,
       "description": "Handles marketing and promotional activities",
       "location": "Building B, Floor 2",
-      "employees": [{ "employeeId": 3 }, { "employeeId": 5 }]
+      "employees": [
+        {
+          "employeeId": 3
+        },
+        {
+          "employeeId": 5
+        }
+      ]
     },
     {
       "id": 203,
@@ -101,9 +136,15 @@
       "description": "Manages financial activities and budgeting",
       "location": "Building A, Floor 1",
       "employees": [
-        { "employeeId": 4 },
-        { "employeeId": 6 },
-        { "employeeId": 7 }
+        {
+          "employeeId": 4
+        },
+        {
+          "employeeId": 6
+        },
+        {
+          "employeeId": 7
+        }
       ]
     }
   ]

@@ -3,20 +3,19 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  width: 800px;
-  margin: 5% 0 5% 0;
+  margin-top: 2rem;
 }
 
 button {
-  background-color: #dd0031;
+  background-color: grey;
   color: white;
   text-align: center;
-  text-align: center;
-  border-radius: 20px;
-  border-width: 0;
-  width: 100px;
-  height: 100px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  width: 20%;
+  padding: 1rem;
 }
 button:hover {
-  background-color: rgb(206, 73, 73);
+  background-color: #1976d2;
 }
