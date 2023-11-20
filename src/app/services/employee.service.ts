@@ -23,4 +23,9 @@ export class EmployeeService {
     // });
   }
 
+  createEmployee(newEmployee:Employee):Observable<Employee>{
+    
+    return this.http.post<any>(`http://localhost:3000/employees`,newEmployee );
+    
+ }
 }

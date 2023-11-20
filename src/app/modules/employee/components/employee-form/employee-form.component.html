@@ -1,20 +1,27 @@
 <div class="create-employee-container card col-8">
-  <form>
-    <label for="firstName"> Nombre
-      <input id="firstName"  type="text" placeholder="Ingrese el nombre">
+  <!-- employee-form.component.html -->
+  <form [formGroup]="employeeForm" id="employeeForm" class="col-9">
+    <label for="firstName">Nombre <span *ngIf="isEdit">nuevo</span>:
+      <input formControlName="firstName" type="text" id="firstName" name="firstName" placeholder="Ingrese el nombre">
+      <small *ngIf="employeeForm.get('firstName')?.invalid && (employeeForm.get('firstName')?.dirty || employeeForm.get('firstName')?.touched)">Debe ingresar un nombre</small>
     </label>
-    <label for="lastName"> Apellido
-      <input id="lastName"  type="text" placeholder="Ingrese el apellido">
+
+    <label for="lastName">Apellido <span *ngIf="isEdit">nuevo</span>:
+      <input formControlName="lastName" type="text" id="lastName" name="lastName" placeholder="Ingrese el apellido">
+      <small *ngIf="employeeForm.get('lastName')?.invalid && (employeeForm.get('lastName')?.dirty || employeeForm.get('lastName')?.touched)">Debe ingresar un apellido</small>
     </label>
-    <label for="country"> Pais
-      <input id="country"  type="text" placeholder="Ingrese el pais">
+
+    <label for="country">Pais  <span *ngIf="isEdit">nuevo</span>:
+      <input formControlName="country" type="text" id="country" name="country" placeholder="Ingrese el país">
+      <small *ngIf="employeeForm.get('country')?.invalid && (employeeForm.get('country')?.dirty || employeeForm.get('country')?.touched)">Debe ingresar un país</small>
     </label>
-    <label for="salary"> Salario
-      <input id="salary"  type="number" placeholder="Ingrese el salario">
+
+    <label for="salary">Salario  <span *ngIf="isEdit">nuevo</span>:
+      <input formControlName="salary" type="number" id="salary" name="salary" placeholder="Ingrese el salario">
+      <small *ngIf="employeeForm.get('salary')?.invalid && (employeeForm.get('salary')?.dirty || employeeForm.get('salary')?.touched)">Debe ingresar un salario</small>
     </label>
   </form>
 
-  <ng-content select="[boton]"></ng-content>
+  <ng-content select="[action]"></ng-content>
 
-  <!-- <button class="col-2" type="submit">Guardar empleado</button> -->
 </div>
