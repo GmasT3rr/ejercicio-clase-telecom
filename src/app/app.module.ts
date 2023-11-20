@@ -5,7 +5,9 @@ import { HighLigthDirective } from './core/directives/high-ligth.directive';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './modules/home/home.module';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { SpinnerInterceptor } from './interceptors/spinner';
+import { SpinnerComponent } from './shared/components/spinner/spinner.component';
 @NgModule({
   declarations: [AppComponent, HighLigthDirective],
   imports: [
@@ -14,8 +16,15 @@ import { HttpClientModule } from '@angular/common/http';
     HomeModule,
     CommonModule,
     HttpClientModule,
+    SpinnerComponent
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: SpinnerInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -4,4 +4,9 @@
   <button routerLink='/gerentes'>Ir a <strong>"/gerentes"</strong></button>
   <button (click)="irAPrueba()">Ir a <strong>"/prueba"</strong></button>
   <button routerLink='/prueba/form'>Ir a <strong>"/prueba/form"</strong></button>
+  
+  <button 
+  (click)="toggleIsLoggedIn()"
+  style="margin-top: 50px;" [style.background]="!isLoggedIn ? 'red' : 'green'" >Ir a <strong>Loguearme</strong></button>
+
 </div>
