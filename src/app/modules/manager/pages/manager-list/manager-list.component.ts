@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Manager, ManagerService } from 'src/app/services/manager.service';
 
@@ -7,16 +7,27 @@ import { Manager, ManagerService } from 'src/app/services/manager.service';
   templateUrl: './manager-list.component.html',
   styleUrls: ['./manager-list.component.css'],
 })
-export class ManagerListComponent {
+export class ManagerListComponent implements OnInit {
   managerArray: Manager[] = [];
   //Observable
   // managerArray$!: Observable<Manager[]>;
   constructor(private managerService: ManagerService) {
-    //Normal
-    this.managerService
-      .getManagers()
-      .subscribe((res) => (this.managerArray = res));
-    Observable;
     // this.managerArray$ = this.managerService.getManagers();
+  }
+  ngOnInit(): void {
+    //Normal
+    // this.managerService
+    //   .getManagers()
+    //   .subscribe((res) => (this.managerArray = res));
+    this.managerService.getManagers().subscribe({
+      next: (value) => {
+        // console.log('succes', value);
+        this.managerArray = value;
+      },
+      error: (err) => {
+        // console.log('errr', err);
+        this.managerArray = [];
+      },
+    });
   }
 }

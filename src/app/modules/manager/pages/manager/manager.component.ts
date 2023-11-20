@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, forkJoin, mergeMap, switchMap } from 'rxjs';
 import { Employee } from 'src/app/modules/employee/pages/employee/employee.component';
@@ -10,7 +10,7 @@ import { Manager, ManagerService } from 'src/app/services/manager.service';
   templateUrl: './manager.component.html',
   styleUrls: ['./manager.component.css'],
 })
-export class ManagerComponent {
+export class ManagerComponent implements OnInit {
   manager?: Manager;
   employees: Employee[] = [];
   constructor(
@@ -18,6 +18,34 @@ export class ManagerComponent {
     private employeeService: EmployeeService,
     private activatedRoute: ActivatedRoute
   ) {
+    //Con operadores de RxJs
+    // this.managerService.getManagerById(id).subscribe((manager) => {
+    //   this.manager = manager;
+    //   const employeeObservables = manager.employees.map((employeeData) => {
+    //     const employeeId = employeeData.employeeId;
+    //     return this.employeeService.getEmployeeById(employeeId);
+    //   });
+    //   forkJoin(employeeObservables).subscribe((employees) => {
+    //     this.employees = employees;
+    //   });
+    // });
+    // this.managerService
+    //   .getManagerById(id)
+    //   .pipe(
+    //     switchMap((manager) => {
+    //       this.manager = manager;
+    //       const employeeObservables = manager.employees.map((employeeData) => {
+    //         const employeeId = employeeData.employeeId;
+    //         return this.employeeService.getEmployeeById(employeeId);
+    //       });
+    //       return forkJoin(employeeObservables);
+    //     })
+    //   )
+    //   .subscribe((employees) => {
+    //     this.employees = employees;
+    //   });
+  }
+  ngOnInit(): void {
     const id = this.activatedRoute.snapshot.params['id'];
 
     //"Normal"
@@ -32,36 +60,5 @@ export class ManagerComponent {
           });
       }
     });
-    //Con operadores de RxJs
-    // this.managerService.getManagerById(id).subscribe((manager) => {
-    //   this.manager = manager;
-
-    //   const employeeObservables = manager.employees.map((employeeData) => {
-    //     const employeeId = employeeData.employeeId;
-    //     return this.employeeService.getEmployeeById(employeeId);
-    //   });
-
-    //   forkJoin(employeeObservables).subscribe((employees) => {
-    //     this.employees = employees;
-    //   });
-    // });
-
-    // this.managerService
-    //   .getManagerById(id)
-    //   .pipe(
-    //     switchMap((manager) => {
-    //       this.manager = manager;
-
-    //       const employeeObservables = manager.employees.map((employeeData) => {
-    //         const employeeId = employeeData.employeeId;
-    //         return this.employeeService.getEmployeeById(employeeId);
-    //       });
-
-    //       return forkJoin(employeeObservables);
-    //     })
-    //   )
-    //   .subscribe((employees) => {
-    //     this.employees = employees;
-    //   });
   }
 }
